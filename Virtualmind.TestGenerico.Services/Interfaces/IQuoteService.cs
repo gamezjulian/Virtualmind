@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Virtualmind.TestGenerico.Core.Entities;
 
-namespace Virtualmind.TestGenerico.Core.Interface
+namespace Virtualmind.TestGenerico.Services.Interfaces
 {
-    public interface IQuotable
+    public interface IQuoteService
     {
         Quote GetQuote();
     }

@@ -16,10 +16,10 @@ namespace Virtualmind.TestGenerico.Impl.Services
             this.resolver = resolver;
         }
 
-        public double GetQuote(Currencies currencyType)
+        public Quote GetQuote(Currencies currencyType)
         {
             ICurrency currency = null;
-            double result = 0;
+            Quote result = new Quote();
 
             switch (currencyType)
             {

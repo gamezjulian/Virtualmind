@@ -191,6 +191,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\QuoteViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -226,7 +227,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -249,6 +249,10 @@
     <ProjectReference Include="..\Virtualmind.TestGenerico.Services\Virtualmind.TestGenerico.Services.csproj">
       <Project>{2CBD6CFA-B1C9-41A1-9B99-E86E82F570B5}</Project>
       <Name>Virtualmind.TestGenerico.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Virtualming.TestGenerico.Data\Virtualming.TestGenerico.Data.csproj">
+      <Project>{68185979-D6E3-4D29-A16A-C5F130814091}</Project>
+      <Name>Virtualming.TestGenerico.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

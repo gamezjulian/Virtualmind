@@ -1,17 +1,17 @@
 using System;
-using System.Web.Http;
 using Unity;
 using Unity.Injection;
-using Unity.Registration;
-using Unity.WebApi;
 using Virtualmind.TestGenerico.Core;
-using Virtualmind.TestGenerico.Core.Behaviors;
 using Virtualmind.TestGenerico.Core.Entities;
 using Virtualmind.TestGenerico.Core.Enums;
 using Virtualmind.TestGenerico.Core.Interface;
 using Virtualmind.TestGenerico.Impl.Services;
+using Virtualmind.TestGenerico.Services.Behaviors;
 using Virtualmind.TestGenerico.Services.Factory;
+using Virtualmind.TestGenerico.Services.Impl;
 using Virtualmind.TestGenerico.Services.Interfaces;
+using Virtualming.TestGenerico.Data;
+using Virtualming.TestGenerico.Data.Interfaces;
 
 namespace Virtualmind.TestGenerico
 {
@@ -61,6 +61,7 @@ namespace Virtualmind.TestGenerico
         private static void RegisterServices(IUnityContainer container)
         {
             container.RegisterType<ICurrencyService, CurrencyService>();
+            container.RegisterType<IQuoteService, QuoteService>();
             container.RegisterType<IStrategyResolver, StrategyResolver>();
 
             container.RegisterType<ICurrency, Currency>(Currencies.Dolar.ToString(), new InjectionConstructor(new ResolvedParameter<IQuotable>(Constants.DolarQuotable)));
@@ -70,7 +71,7 @@ namespace Virtualmind.TestGenerico
 
         private static void RegisterRepositories(IUnityContainer container)
         {
-
+            container.RegisterType<IQuoteData, QuoteData>();
         }
     }
 }

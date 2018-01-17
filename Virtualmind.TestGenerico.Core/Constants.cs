@@ -11,5 +11,6 @@ namespace Virtualmind.TestGenerico.Core
         public const string PesoQuotable = "PesoQuotable";
         public const string RealQuotable = "RealQuotable";
         public const string DolarQuotable = "DolarQuotable";
+        public const string QuoteServiceUrl = "QuoteServiceUrl";
     }
 }
