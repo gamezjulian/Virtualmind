@@ -41,7 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Behaviors\DolarQuotable.cs" />
+    <Compile Include="Behaviors\PesoQuotable.cs" />
+    <Compile Include="Behaviors\RealQuotable.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Entities\Currency.cs" />
+    <Compile Include="Enums\Currencies.cs" />
+    <Compile Include="Interfaces\ICurrency.cs" />
+    <Compile Include="Interfaces\IQuotable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

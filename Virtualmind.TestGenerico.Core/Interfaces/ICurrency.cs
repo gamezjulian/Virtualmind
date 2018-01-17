@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Virtualmind.TestGenerico.Core
+namespace Virtualmind.TestGenerico.Core.Interface
 {
-    public class Class1
+    public interface ICurrency
     {
+        IQuotable Quote { get; set; }
     }
 }
