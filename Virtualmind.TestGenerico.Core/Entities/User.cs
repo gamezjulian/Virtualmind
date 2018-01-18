@@ -17,7 +17,10 @@ namespace Virtualmind.TestGenerico.Core.Entities
         public string Password
         {
             get { return this.password; }
-            set { password = (!string.IsNullOrEmpty(this.password)) ? EncryptionHelper.GetPasswordHash(value) : string.Empty; }
+            set
+            {
+                password = (!string.IsNullOrEmpty(value)) ? EncryptionHelper.GetPasswordHash(value) : string.Empty;
+            }
         }
 
         [NotMapped]

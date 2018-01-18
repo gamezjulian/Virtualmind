@@ -59,14 +59,21 @@ namespace Virtualmind.TestGenerico.Controllers.Api
 
         [HttpDelete]
         [Route("api/users/delete")]
-        public UserViewModel Delete(UserViewModel viewModel)
+        public void Delete(UserViewModel viewModel)
         {
             var result = new UserViewModel();
             var userEntity = Mapper.Map<UserViewModel, User>(viewModel);
-            var user = this.userService.Update(userEntity);
-            result = Mapper.Map<UserViewModel>(user);
+            this.userService.Delete(userEntity);
+        }
 
-            return result;
+        [HttpGet]
+        [Route("api/users/{id}")]
+        public UserViewModel Get(int id)
+        {
+            var user = this.userService.Find(id);
+            var viewModel = Mapper.Map<UserViewModel>(user);
+
+            return viewModel;
         }
     }
 }

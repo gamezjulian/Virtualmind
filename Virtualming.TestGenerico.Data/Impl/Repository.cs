@@ -30,6 +30,7 @@ namespace Virtualming.TestGenerico.Data.Impl
 
         public void Delete(T entity)
         {
+            this.DbContext.Set<T>().Attach(entity);
             var removedEntity = this.DbContext.Set<T>().Remove(entity);
             this.SaveChanges();
         }

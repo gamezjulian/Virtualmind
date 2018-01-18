@@ -9,6 +9,6 @@ namespace Virtualmind.TestGenerico.Models
     {
         public double Buy { get; set; }
         public double Sell { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
     }
 }

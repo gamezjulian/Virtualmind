@@ -8,8 +8,6 @@ namespace Virtualming.TestGenerico.Data.Entities
 {
     public class QuoteResponse
     {
-        public double Buy { get; set; }
-        public double Sell { get; set; }
-        public DateTime Date { get; set; }
+        public List<string> Values { get; set; }
     }
 }

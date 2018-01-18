@@ -1,6 +1,7 @@
 using System;
 using Unity;
 using Unity.Injection;
+using Unity.Lifetime;
 using Virtualmind.TestGenerico.Core;
 using Virtualmind.TestGenerico.Core.Entities;
 using Virtualmind.TestGenerico.Core.Enums;
@@ -76,7 +77,7 @@ namespace Virtualmind.TestGenerico
         private static void RegisterRepositories(IUnityContainer container)
         {
             container.RegisterType<IQuoteData, QuoteData>();
-            container.RegisterType(typeof(IRepository<,>), typeof(Repository<,>));
+            container.RegisterType(typeof(IRepository<,>), typeof(Repository<,>), new ContainerControlledLifetimeManager());
         }
     }
 }

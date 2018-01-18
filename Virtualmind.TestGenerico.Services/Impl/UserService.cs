@@ -25,6 +25,11 @@ namespace Virtualmind.TestGenerico.Services.Impl
             this.userRepository.Delete(entity);
         }
 
+        public User Find(int id)
+        {
+            return this.userRepository.Get(id);
+        }
+
         public IEnumerable<User> GetAllUsers()
         {
             return this.userRepository.GetAll();

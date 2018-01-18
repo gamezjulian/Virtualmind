@@ -22,12 +22,21 @@ namespace Virtualmind.TestGenerico.Services.Impl
         {
             var quote = this.data.GetQuote();
 
-            return new Quote
+            if (quote != null && quote.Values.Any())
             {
-                Buy = quote.Buy,
-                Date = quote.Date,
-                Sell = quote.Sell
-            };
+                var buyValue = double.Parse(quote.Values.First());
+                var dateValue = quote.Values.Last().ToString();
+                var sellValue = double.Parse(quote.Values.ElementAt(1));
+
+                return new Quote
+                {
+                    Buy = buyValue,
+                    Date = dateValue,
+                    Sell = sellValue
+                };
+            }
+
+            throw new Exception("There was an error getting quote value.");
         }
     }
 }

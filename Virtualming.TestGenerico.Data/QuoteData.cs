@@ -17,12 +17,12 @@ namespace Virtualming.TestGenerico.Data
     {
         public QuoteResponse GetQuote()
         {
-            var result = new QuoteResponse();
+            var values = new List<string>();
             var requestUrl = ConfigurationManager.AppSettings.Get(Constants.QuoteServiceUrl);
             var request = WebRequest.Create(requestUrl);
+            var result = new QuoteResponse();
 
             request.Method = "GET";
-            request.ContentType = "application/json; charset=utf-8";
 
             var response = request.GetResponse();
 
@@ -32,7 +32,9 @@ namespace Virtualming.TestGenerico.Data
 
             string responseFromServer = reader.ReadToEnd();
             JavaScriptSerializer javascriptSerializer = new JavaScriptSerializer();
-            result = javascriptSerializer.Deserialize<QuoteResponse>(responseFromServer);
+            values = javascriptSerializer.Deserialize<List<string>>(responseFromServer);
+
+            result.Values = values;
 
             return result;
         }
