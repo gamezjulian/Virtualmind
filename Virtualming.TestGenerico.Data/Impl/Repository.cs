@@ -11,9 +11,14 @@ namespace Virtualming.TestGenerico.Data.Impl
 {
     public class Repository<T, U> : IRepository<T, U>
         where T : BaseEntity
-        where U : DbContext
+        where U : DbContext, new()
     {
         public U DbContext { get; set; }
+
+        public Repository()
+        {
+            this.DbContext = new U();
+        }
 
         public T Add(T entity)
         {

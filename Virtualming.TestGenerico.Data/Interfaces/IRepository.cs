@@ -10,7 +10,7 @@ namespace Virtualming.TestGenerico.Data.Interfaces
 {
     public interface IRepository<T, U>
         where T : BaseEntity
-        where U : DbContext
+        where U : DbContext, new()
     {
         T Add(T entity);
         void Delete(T entity);

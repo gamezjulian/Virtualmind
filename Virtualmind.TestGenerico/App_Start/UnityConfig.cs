@@ -66,8 +66,7 @@ namespace Virtualmind.TestGenerico
             container.RegisterType<IQuoteService, QuoteService>();
             container.RegisterType<IStrategyResolver, StrategyResolver>();
             container.RegisterType<IUserService, UserService>(new InjectionConstructor(
-                new ResolvedParameter<User>(),
-                new ResolvedParameter<UserDbContext>()));
+                new ResolvedParameter<IRepository<User, UserDbContext>>()));
 
             container.RegisterType<ICurrency, Currency>(Currencies.Dolar.ToString(), new InjectionConstructor(new ResolvedParameter<IQuotable>(Constants.DolarQuotable)));
             container.RegisterType<ICurrency, Currency>(Currencies.Peso.ToString(), new InjectionConstructor(new ResolvedParameter<IQuotable>(Constants.PesoQuotable)));
@@ -77,7 +76,7 @@ namespace Virtualmind.TestGenerico
         private static void RegisterRepositories(IUnityContainer container)
         {
             container.RegisterType<IQuoteData, QuoteData>();
-            container.RegisterType(typeof(IRepository<,>).MakeGenericType(), typeof(Repository<,>).MakeGenericType());
+            container.RegisterType(typeof(IRepository<,>), typeof(Repository<,>));
         }
     }
 }

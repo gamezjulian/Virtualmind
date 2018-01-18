@@ -10,5 +10,11 @@ namespace Virtualmind.TestGenerico.Services.Interfaces
     public interface IUserService
     {
         IEnumerable<User> GetAllUsers();
+
+        User AddUser(User entity);
+
+        User Update(User entity);
+
+        void Delete(User entity);
     }
 }

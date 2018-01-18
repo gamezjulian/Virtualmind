@@ -11,7 +11,7 @@ namespace Virtualming.TestGenerico.Data.Contexts
 {
     public class UserDbContext : DbContext
     {
-        public UserDbContext() : base("users")
+        public UserDbContext() : base("Virtualmind")
         {
 
         }

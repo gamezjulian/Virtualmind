@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +49,7 @@
     <Compile Include="Entities\Quote.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Enums\Currencies.cs" />
+    <Compile Include="Helpers\EncryptionHelper.cs" />
     <Compile Include="Interfaces\ICurrency.cs" />
     <Compile Include="Interfaces\IQuotable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

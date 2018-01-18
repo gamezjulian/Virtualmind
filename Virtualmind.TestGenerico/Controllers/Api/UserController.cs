@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Virtualmind.TestGenerico.Core.Entities;
 using Virtualmind.TestGenerico.Models;
 using Virtualmind.TestGenerico.Services.Interfaces;
 
@@ -28,6 +29,42 @@ namespace Virtualmind.TestGenerico.Controllers.Api
             var users = this.userService.GetAllUsers();
 
             result = Mapper.Map<IEnumerable<UserViewModel>>(users).ToList();
+
+            return result;
+        }
+
+        [HttpPost]
+        [Route("api/users/add")]
+        public UserViewModel Add(UserViewModel viewModel)
+        {
+            var result = new UserViewModel();
+            var userEntity = Mapper.Map<UserViewModel, User>(viewModel);
+            var user = this.userService.AddUser(userEntity);
+            result = Mapper.Map<UserViewModel>(user);
+
+            return result;
+        }
+
+        [HttpPut]
+        [Route("api/users/update")]
+        public UserViewModel Update(UserViewModel viewModel)
+        {
+            var result = new UserViewModel();
+            var userEntity = Mapper.Map<UserViewModel, User>(viewModel);
+            var user = this.userService.Update(userEntity);
+            result = Mapper.Map<UserViewModel>(user);
+
+            return result;
+        }
+
+        [HttpDelete]
+        [Route("api/users/delete")]
+        public UserViewModel Delete(UserViewModel viewModel)
+        {
+            var result = new UserViewModel();
+            var userEntity = Mapper.Map<UserViewModel, User>(viewModel);
+            var user = this.userService.Update(userEntity);
+            result = Mapper.Map<UserViewModel>(user);
 
             return result;
         }

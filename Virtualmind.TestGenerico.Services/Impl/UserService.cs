@@ -15,9 +15,24 @@ namespace Virtualmind.TestGenerico.Services.Impl
             this.userRepository = repository;
         }
 
+        public User AddUser(User entity)
+        {
+            return this.userRepository.Add(entity);
+        }
+
+        public void Delete(User entity)
+        {
+            this.userRepository.Delete(entity);
+        }
+
         public IEnumerable<User> GetAllUsers()
         {
             return this.userRepository.GetAll();
+        }
+
+        public User Update(User entity)
+        {
+            return this.userRepository.Update(entity);
         }
     }
 }
