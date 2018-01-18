@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Currency.cs" />
     <Compile Include="Entities\Quote.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Enums\Currencies.cs" />
     <Compile Include="Interfaces\ICurrency.cs" />
     <Compile Include="Interfaces\IQuotable.cs" />

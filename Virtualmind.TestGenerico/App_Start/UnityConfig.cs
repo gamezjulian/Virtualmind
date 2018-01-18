@@ -11,6 +11,8 @@ using Virtualmind.TestGenerico.Services.Factory;
 using Virtualmind.TestGenerico.Services.Impl;
 using Virtualmind.TestGenerico.Services.Interfaces;
 using Virtualming.TestGenerico.Data;
+using Virtualming.TestGenerico.Data.Contexts;
+using Virtualming.TestGenerico.Data.Impl;
 using Virtualming.TestGenerico.Data.Interfaces;
 
 namespace Virtualmind.TestGenerico
@@ -63,6 +65,9 @@ namespace Virtualmind.TestGenerico
             container.RegisterType<ICurrencyService, CurrencyService>();
             container.RegisterType<IQuoteService, QuoteService>();
             container.RegisterType<IStrategyResolver, StrategyResolver>();
+            container.RegisterType<IUserService, UserService>(new InjectionConstructor(
+                new ResolvedParameter<User>(),
+                new ResolvedParameter<UserDbContext>()));
 
             container.RegisterType<ICurrency, Currency>(Currencies.Dolar.ToString(), new InjectionConstructor(new ResolvedParameter<IQuotable>(Constants.DolarQuotable)));
             container.RegisterType<ICurrency, Currency>(Currencies.Peso.ToString(), new InjectionConstructor(new ResolvedParameter<IQuotable>(Constants.PesoQuotable)));
@@ -72,6 +77,7 @@ namespace Virtualmind.TestGenerico
         private static void RegisterRepositories(IUnityContainer container)
         {
             container.RegisterType<IQuoteData, QuoteData>();
+            container.RegisterType(typeof(IRepository<,>).MakeGenericType(), typeof(Repository<,>).MakeGenericType());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -26,12 +27,7 @@ namespace Virtualmind.TestGenerico.Controllers.Api
         {
             var quote = this.currencyService.GetQuote(currencyType);
 
-            return new QuoteViewModel
-            {
-                Buy = quote.Buy,
-                Sell = quote.Sell,
-                Date = quote.Date
-            };
+            return Mapper.Map<QuoteViewModel>(quote);
         }
     }
 }
