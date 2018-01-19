@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virtualming.TestGenerico.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virtualmind.TestGenerico.Core", "Virtualmind.TestGenerico.Core\Virtualmind.TestGenerico.Core.csproj", "{CE33ECF5-8C2D-451F-A509-7802EE25416A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F61C483-F470-4635-96A2-53D9092DBA61}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+		..\..\..\Desktop\script.sql = ..\..\..\Desktop\script.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
