@@ -20,9 +20,9 @@ namespace Virtualmind.TestGenerico.Services.Impl
             return this.userRepository.Add(entity);
         }
 
-        public void Delete(User entity)
+        public bool Delete(User entity)
         {
-            this.userRepository.Delete(entity);
+            return this.userRepository.Delete(entity);
         }
 
         public User Find(int id)

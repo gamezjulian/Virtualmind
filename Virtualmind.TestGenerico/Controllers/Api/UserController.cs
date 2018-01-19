@@ -25,9 +25,7 @@ namespace Virtualmind.TestGenerico.Controllers.Api
         public IEnumerable<UserViewModel> GetAll()
         {
             var result = new List<UserViewModel>();
-
             var users = this.userService.GetAllUsers();
-
             result = Mapper.Map<IEnumerable<UserViewModel>>(users).ToList();
 
             return result;

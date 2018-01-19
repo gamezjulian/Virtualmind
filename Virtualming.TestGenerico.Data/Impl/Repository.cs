@@ -28,11 +28,22 @@ namespace Virtualming.TestGenerico.Data.Impl
             return newEntity;
         }
 
-        public void Delete(T entity)
+        public bool Delete(T entity)
         {
-            this.DbContext.Set<T>().Attach(entity);
-            var removedEntity = this.DbContext.Set<T>().Remove(entity);
-            this.SaveChanges();
+            var result = true;
+
+            try
+            {
+                this.DbContext.Set<T>().Attach(entity);
+                var removedEntity = this.DbContext.Set<T>().Remove(entity);
+                this.SaveChanges();
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+
+            return result;
         }
 
         public T Get(int id)

@@ -15,7 +15,7 @@ namespace Virtualmind.TestGenerico.Services.Interfaces
 
         User Update(User entity);
 
-        void Delete(User entity);
+        bool Delete(User entity);
 
         User Find(int id);
     }

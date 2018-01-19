@@ -19,7 +19,7 @@ namespace Virtualmind.TestGenerico.Services.Behaviors
             this.quoteService = service;
         }
 
-        public Quote GetQuote()
+        public virtual Quote GetQuote()
         {
             return this.quoteService.GetQuote();
         }

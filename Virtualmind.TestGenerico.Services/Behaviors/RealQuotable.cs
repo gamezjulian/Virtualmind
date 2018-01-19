@@ -6,7 +6,7 @@ namespace Virtualmind.TestGenerico.Services.Behaviors
 {
     public class RealQuotable : IQuotable
     {
-        public Quote GetQuote()
+        public virtual Quote GetQuote()
         {
             throw new HttpException(401, "Unauthorized");
         }

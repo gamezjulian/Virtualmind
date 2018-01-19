@@ -13,7 +13,7 @@ namespace Virtualming.TestGenerico.Data.Interfaces
         where U : DbContext, new()
     {
         T Add(T entity);
-        void Delete(T entity);
+        bool Delete(T entity);
         T Update(T entity);
         T Get(int id);
         IEnumerable<T> GetAll();
